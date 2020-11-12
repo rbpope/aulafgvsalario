@@ -1,3 +1,5 @@
+library(ggplot2)
+
 # transforma em dataframe e apresenta as primeiras linhas
 df <- data.frame(salarios) 
 head(df)
