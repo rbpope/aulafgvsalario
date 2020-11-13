@@ -71,4 +71,3 @@ t.test(Roupas_Masculinas$anterior, Roupas_Masculinas$seguinte, alt="two.sided", 
 
 library(ggplot2)
 ggplot2(Chocolates(anterior, cat))
-  geom_boxplot()
