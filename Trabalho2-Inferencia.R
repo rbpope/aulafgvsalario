@@ -1,3 +1,5 @@
+install.packages("ggplot2")
+
 # transforma em dataframe e apresenta as primeiras linhas
 df <- data.frame(pokemon) 
 colnames(df)
@@ -63,3 +65,10 @@ t.test(Roupas_Masculinas$anterior, Roupas_Masculinas$seguinte, alt="two.sided", 
 
 
 #5.	   Qual a sua recomendação final, em linguagem de gestor, para os diretores dessa loja?
+
+
+
+
+library(ggplot2)
+ggplot2(Chocolates(anterior, cat))
+  geom_boxplot()
