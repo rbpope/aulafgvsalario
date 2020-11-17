@@ -1,4 +1,5 @@
 install.packages("ggplot2")
+install.packages("purrr")
 
 # transforma em dataframe e apresenta as primeiras linhas
 df <- data.frame(pokemon) 
@@ -41,7 +42,7 @@ boxplot(seguinte ~ cat, data=df)
 t.test(anterior ~ cat,data=df, alt="greater")
 t.test(anterior ~ cat,data=df, alt="less")
 t.test(anterior ~ cat,data=df, alt="two.sided")
-
+# Não há evidência, pois p valor é maior que 5%, o que não nos permite revutar a hipótese nula.
 
 #2.	Há evidência para afirmar que o Índice de Vendas médio da categoria Chocolates tenha aumentado durante a promoção?
 
@@ -66,8 +67,11 @@ t.test(Roupas_Masculinas$anterior, Roupas_Masculinas$seguinte, alt="two.sided", 
 
 #5.	   Qual a sua recomendação final, em linguagem de gestor, para os diretores dessa loja?
 
+t.test(Roupas_Masculinas$anterior, Roupas_Masculinas$seguinte, alt="two.sided", paired = TRUE)
+t.test(Roupas_Masculinas$anterior, Roupas_Masculinas$data, alt="two.sided", paired = TRUE)
 
-
-
+install.packages("ggplot2")
 library(ggplot2)
-ggplot2(Chocolates(anterior, cat))
+ggplot2.boxplot(data = df, xName='cat',yName='anterior',
+                addMean=TRUE, meanPointShape=23, meanPointSize=2.5,
+                meanPointColor="black", meanPointFill="blue")
